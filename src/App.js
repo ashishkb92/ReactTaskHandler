@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import PeopleContainer from './components/PeopleContainer';
+import CreateTask from './components/CreateTask';
+import Tasks from './components/Tasks'
 
-class App extends Component {
+
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <PeopleContainer />
+      <div className="container-fluid" style={{maxWidth:'700px',margin:'50px auto'}}>
+        <h1 style={{textAlign:'center',fontWeight:'bold',marginBottom:'30px'}}>Task Handler</h1>
+        <CreateTask />
+        <Tasks />
       </div>
     );
   }

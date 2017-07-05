@@ -1,1 +1,4 @@
-export const ADD_PERSON = 'ADD_PERSON';
+export const CREATE_TASK = 'CREATE_TASK';
+export const EDIT_TASK = 'EDIT_TASK'
+export const SAVE_TASK = 'SAVE_TASK'
+export const DELETE_TASK = 'DELETE_TASK'
