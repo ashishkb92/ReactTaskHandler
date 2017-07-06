@@ -10,7 +10,8 @@ class CreateTask extends React.Component{
     super(props)
     this.state = {
       task : {},
-      inputText: ""
+      inputText: "",
+      inputName : ""
     }
 
     this.handleChange=this.handleChange.bind(this);
@@ -22,18 +23,24 @@ class CreateTask extends React.Component{
     let task={};
     let id = it.next().value
     task[id] = {
+      id ,
+      name : this.state.inputName,
       text : this.state.inputText,
-      isEditable:false
+      isEditable:false,
+      createdOn : new Date(),
+      updatedOn : "Not yet updated"
     }
     this.props.actions.createTask(task);
     this.setState({
-      inputText : ""
+      inputText : "",
+      inputName : ""
     });
   }
 
   handleChange(e){
+    debugger;
     this.setState({
-      inputText : e.target.value
+      [e.target.name] : e.target.value
     })
   }
 
@@ -41,20 +48,36 @@ class CreateTask extends React.Component{
     return (
       <form className="form-horizontal" onSubmit={this.handleSubmit}>
         <div className="form-group">
+          <label className="control-label col-md-2" >Name:</label>
           <div className="col-md-10">
             <input
+              name="inputName"
               type="text"
               className="form-control"
-              value={this.state.inputText}
+              value={this.state.inputName}
               onChange={this.handleChange}
             />
           </div >
-          <div className="col-md-2">
+        </div>
+        <div className="form-group">
+          <label className="control-label col-md-2" >Description:</label>
+          <div className="col-md-10">
+            <textarea
+              name="inputText"
+              rows="2"
+              className="form-control"
+              value={this.state.inputText}
+              onChange={this.handleChange}>
+            </textarea>
+          </div >
+        </div>
+        <div className="form-group">
+          <div className="col-md-offset-2 col-md-10">
             <button
               type="submit"
               className="btn btn-primary"
               onClick={this.handleSubmit}
-              disabled={!this.state.inputText}
+              disabled={!this.state.inputText||!this.state.inputName}
             >
             Create Task
             </button>

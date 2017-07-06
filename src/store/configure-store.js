@@ -6,6 +6,7 @@ const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )
 
-export default (initialState) => {
+
+export default (initialState=JSON.parse(localStorage.getItem('tasks'))||{}) => {
   return createStore(rootReducer, initialState, enhancers);
 };

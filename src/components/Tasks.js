@@ -22,11 +22,15 @@ class Tasks extends React.Component{
     this.props.actions.deleteTask(id)
   }
 
-  handleSave(text,id){
+  handleSave(name,text,id){
     let task ={};
     task[id] = {
-      isEditable:false,
-      text
+      id,
+      name,
+      text,
+      isEditable : false,
+      createdOn :  this.props.tasks[id].createdOn,
+      updatedOn : new Date()
     }
     this.props.actions.saveTask(task)
   }
