@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as taskActions from '../actions/task-actions';
-import it from '../helpers/idGenerator'
+import it from '../helpers/idGenerator';
+import toastr from 'toastr';
 
 
 class CreateTask extends React.Component{
@@ -35,6 +36,8 @@ class CreateTask extends React.Component{
       inputText : "",
       inputName : ""
     });
+    toastr.options.timeOut = 3;
+    toastr.success('Task Created');
   }
 
   handleChange(e){

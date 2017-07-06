@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as taskActions from '../actions/task-actions';
-import TaskList from './TaskList'
+import TaskList from './TaskList';
+import toastr from 'toastr';
 
 
 
@@ -19,7 +20,9 @@ class Tasks extends React.Component{
   }
 
   handleDelete(id){
-    this.props.actions.deleteTask(id)
+    this.props.actions.deleteTask(id);
+    toastr.options.timeOut = 3;
+    toastr.error('Task Deleted');
   }
 
   handleSave(name,text,id){
@@ -32,7 +35,9 @@ class Tasks extends React.Component{
       createdOn :  this.props.tasks[id].createdOn,
       updatedOn : new Date()
     }
-    this.props.actions.saveTask(task)
+    this.props.actions.saveTask(task);
+    toastr.options.timeOut = 3;
+    toastr.success('Task Saved');
   }
 
   render() {
