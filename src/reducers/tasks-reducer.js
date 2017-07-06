@@ -1,7 +1,6 @@
 import * as types from '../actions/action-types';
 
 export default (tasks = {}, action) => {
-  debugger;
   var newTasks={...tasks}
   switch (action.type) {
     case types.CREATE_TASK:

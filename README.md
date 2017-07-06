@@ -1,12 +1,13 @@
-# `create-react-app` ... with Redux
+# React Task Handler
 
-This is a barebones implementation of Redux with a React app that was generated with `create-react-app`, and then ejected with `npm run eject`.
+This app basically lets you add your task and later you can edit or delete your tasks
 
-:bulb: This repository consists of two commits and only two commits.  
+Features of this app
 
- 1. **first commit** is the base code of a `create-react-app` app source code after eject (`npm run eject`)
- 2. **second commit** are the sample additions to implement basic redux
+Create Task
 
-:bulb: :bulb: It is worth noting that it is **not** required to run `npm run eject` in order to get Redux implemented in this app.  Implementing Redux in the app without ejecting is completely possible
+This app lets you create your task. You can create your task on Task handler home page. On successful creation of task you will get a notification on top right hand corner.
 
-![demo](images/demo.gif)
+
+
+

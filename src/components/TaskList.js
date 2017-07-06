@@ -24,7 +24,6 @@ class TaskList extends React.Component {
   }
 
   handleSave(e) {
-    debugger;
     e.preventDefault();
     this.props.onSave(this.state.inputName,this.state.inputText,this.props.id)
   }
@@ -46,7 +45,7 @@ class TaskList extends React.Component {
     let editButton = <button onClick={this.handleEdit}className="btn btn-warning">Edit</button>
     let saveButton = <button onClick={this.handleSave}className="btn btn-success" disabled={!this.state.inputText||!this.state.inputName}>Save</button>
     var showButton = isEditable?saveButton:editButton;
-    debugger;
+
     return(
       <div className="taskbox">
         <form className="form-horizontal">

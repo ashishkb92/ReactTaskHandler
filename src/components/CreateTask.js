@@ -40,8 +40,7 @@ class CreateTask extends React.Component{
     toastr.success('Task Created');
   }
 
-  handleChange(e){
-    debugger;
+  handleChange(e) {
     this.setState({
       [e.target.name] : e.target.value
     })
@@ -90,7 +89,6 @@ class CreateTask extends React.Component{
     )
   }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {

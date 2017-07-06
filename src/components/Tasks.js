@@ -15,17 +15,17 @@ class Tasks extends React.Component{
     this.handleDelete = this.handleDelete.bind(this)
   }
 
-  handleEdit(id){
+  handleEdit(id) {
     this.props.actions.editTask(id)
   }
 
-  handleDelete(id){
+  handleDelete(id) {
     this.props.actions.deleteTask(id);
     toastr.options.timeOut = 3;
     toastr.error('Task Deleted');
   }
 
-  handleSave(name,text,id){
+  handleSave(name,text,id) {
     let task ={};
     task[id] = {
       id,
@@ -47,7 +47,6 @@ class Tasks extends React.Component{
         <TaskList key={key} id={key} {...tasks} onEdit={this.handleEdit} onSave={this.handleSave} onDelete={this.handleDelete}/>
     )
 
-    debugger;
     return (
       <div >
           {renderTask}
