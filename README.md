@@ -1,5 +1,6 @@
 # React Task Handler
 
+Live application is available on http://taskhandler.herokuapp.com/
 
 NPM INSTRUCTIONS
 
